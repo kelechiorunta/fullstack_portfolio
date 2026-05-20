@@ -7,7 +7,16 @@ export type SkillType = {
 
 export default function Skill({ category, tools }: SkillType) {
   return (
-    <Card style={{ width: '100%', padding: 4, minHeight: '300px' }}>
+    <Card
+      style={{
+        width: '100%',
+        padding: 4,
+        minHeight: '300px',
+        flexGrow: 1,
+        flexShrink: 0,
+        flexBasis: '200px'
+      }}
+    >
       <Flex direction={'column'} justify={'center'} width={'100%'} mx={'auto'}>
         <Heading className="skill_title" mx={'auto'} color="gold">
           {category}
