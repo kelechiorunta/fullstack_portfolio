@@ -1,4 +1,4 @@
-import { CodeIcon, ContainerIcon, PersonIcon, StackIcon } from '@radix-ui/react-icons';
+import { CodeIcon, GlobeIcon, PersonIcon, StackIcon } from '@radix-ui/react-icons';
 import { Box, Card, Flex, Heading, IconButton, Text } from '@radix-ui/themes';
 import './About.css';
 
@@ -16,8 +16,8 @@ export default function About() {
           </Text>
         </Box>
       </Box>
-      <Flex width={'70%'} gap={'4'} mx={'auto'} p={'8'}>
-        <Box width={'40%'} justifySelf={'start'}>
+      <Flex width={'80%'} gap={'4'} mx={'auto'} p={'8'} wrap={'wrap'}>
+        <Box justifySelf={'start'} flexBasis={'350px'} flexGrow={'1'} flexShrink={'0'}>
           <Heading align={'left'} size={'6'} color="gold">
             My Journey
           </Heading>
@@ -38,8 +38,8 @@ export default function About() {
           </Text>
           <br />
         </Box>
-        <Flex width={'60%'} wrap={'wrap'} gap={'4'}>
-          <Card style={{ maxWidth: '250px', maxHeight: '200px' }}>
+        <Flex wrap={'wrap'} gap={'4'} flexBasis={'60%'} flexGrow={'1'} flexShrink={'0'}>
+          <Card style={{ maxHeight: '200px', flexBasis: '250px', flexShrink: 0, flexGrow: 1 }}>
             <Box p={'4'}>
               <IconButton>
                 <CodeIcon width={'18'} height={'18'} />
@@ -52,10 +52,10 @@ export default function About() {
               </Text>
             </Box>
           </Card>
-          <Card style={{ maxWidth: '250px', maxHeight: '200px' }}>
+          <Card style={{ maxHeight: '200px', flexBasis: '250px', flexShrink: 0, flexGrow: 1 }}>
             <Box p={'4'}>
               <IconButton>
-                <ContainerIcon width={'18'} height={'18'} />
+                <StackIcon width={'18'} height={'18'} />
               </IconButton>
               <Heading size={'3'} color="gold">
                 Backend Development
@@ -65,10 +65,10 @@ export default function About() {
               </Text>
             </Box>
           </Card>
-          <Card style={{ maxWidth: '250px', maxHeight: '200px' }}>
+          <Card style={{ maxHeight: '200px', flexBasis: '250px', flexShrink: 0, flexGrow: 1 }}>
             <Box p={'4'}>
               <IconButton>
-                <StackIcon width={'18'} height={'18'} />
+                <GlobeIcon width={'18'} height={'18'} />
               </IconButton>
               <Heading size={'3'} color="gold">
                 FullStack Development
@@ -78,7 +78,7 @@ export default function About() {
               </Text>
             </Box>
           </Card>
-          <Card style={{ maxWidth: '250px', maxHeight: '200px' }}>
+          <Card style={{ maxHeight: '200px', flexBasis: '250px', flexShrink: 0, flexGrow: 1 }}>
             <Box p={'4'}>
               <IconButton>
                 <PersonIcon width={'18'} height={'18'} />
