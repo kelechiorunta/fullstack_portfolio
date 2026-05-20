@@ -54,7 +54,7 @@ export default function LandingSection() {
               <LinkedInLogoIcon width="18" height="18" />
             </IconButton>
 
-            <IconButton variant="soft" title="Send me a mail">
+            <IconButton variant="soft" title="Send me an mail">
               <EnvelopeClosedIcon width="18" height="18" />
             </IconButton>
           </Flex>
