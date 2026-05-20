@@ -12,7 +12,7 @@ export default function SkillsSection() {
       <Text size={'2'} mb={'4'}>
         Here are the technologies and tools I work with to bring ideas to life.
       </Text>
-      <Flex gap={'4'} align={'center'} mt={'8'}>
+      <Flex gap={'4'} align={'center'} mt={'8'} wrap={'wrap'}>
         {skills.map((skill, idx) => (
           <Skill key={idx} category={skill.category} tools={skill.tools} />
         ))}
