@@ -1,5 +1,5 @@
 import supertest, { Agent } from 'supertest';
-import { describe, test, expect, beforeAll, jest } from '@jest/globals';
+import { describe, test, expect, beforeAll } from '@jest/globals';
 import dotenv from 'dotenv';
 // import nodemailer from 'nodemailer';
 
@@ -11,20 +11,20 @@ import { App } from 'supertest/types';
 let app: App;
 let agent: Agent;
 
-const sendMailMock = jest.fn(() => ({
-  response: 'Mail sent successfully'
-}));
+// const sendMailMock = jest.fn(() => ({
+//   response: 'Mail sent successfully'
+// }));
 
-const createTransportMock = jest.fn(() => ({
-  sendMail: sendMailMock
-}));
+// const createTransportMock = jest.fn(() => ({
+//   sendMail: sendMailMock
+// }));
 
-jest.mock('nodemailer', () => ({
-  __esModule: true,
-  default: {
-    createTransport: createTransportMock
-  }
-}));
+// jest.mock('nodemailer', () => ({
+//   __esModule: true,
+//   default: {
+//     createTransport: createTransportMock
+//   }
+// }));
 
 // jest.mock('../backend/controllers/mailControllers');
 // const spycreateTransport = jest.spyOn('nodemailer', createTransport)
@@ -38,7 +38,7 @@ describe('api test', () => {
   test('test email api', async () => {
     // const nodemailer = (await import('nodemailer')).default;
     const response = await agent
-      .post('/api/sendMessage')
+      .post('/api/mail/sendMessage')
       .set('Content-Type', 'application/json')
       .send({
         firstName: 'testUser',
@@ -53,4 +53,9 @@ describe('api test', () => {
     // expect(createTransportMock).toHaveBeenCalledTimes(1);
     // expect(sendMailMock).toHaveBeenCalledTimes(1);
   }, 15000);
+
+  test('test cv api', async () => {
+    const cvDownloadResponse = await agent.get('/api/cv/downloadCV');
+    expect(cvDownloadResponse.status).toBe(200);
+  }, 5000);
 });
