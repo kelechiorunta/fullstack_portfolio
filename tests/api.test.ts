@@ -57,5 +57,9 @@ describe('api test', () => {
   test('test cv api', async () => {
     const cvDownloadResponse = await agent.get('/api/cv/downloadCV');
     expect(cvDownloadResponse.status).toBe(200);
+    expect(cvDownloadResponse.headers['content-type']).toContain('application/pdf');
+    expect(cvDownloadResponse.headers['content-disposition']).toContain(
+      'attachment; filename="CV.pdf"'
+    );
   }, 5000);
 });
