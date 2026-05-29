@@ -62,4 +62,13 @@ describe('api test', () => {
       'attachment; filename="CV.pdf"'
     );
   }, 5000);
+
+  test('test placeholder api', async () => {
+    const placeholderResponse = await agent.get('/api/placeholder/Me.jpg');
+    expect(placeholderResponse.status).toBe(200);
+    // expect(cvDownloadResponse.headers['content-type']).toContain('application/pdf');
+    // expect(cvDownloadResponse.headers['content-disposition']).toContain(
+    //   'attachment; filename="CV.pdf"'
+    // );
+  }, 5000);
 });
